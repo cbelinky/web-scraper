@@ -1,2 +1,2 @@
 # web-scraper
- zomato.com web scraping with beautifulsoup in python
+ web scraping socialblade.com with beautifulsoup in python to create a .csv of the top channels
