@@ -1,2 +1,3 @@
 # web-scraper
- web scraping socialblade.com with beautifulsoup in python to create a .csv of the top channels
+Web scraper that collects top 50 highest grossing films of the year specified by the user. 
+the data is formatted and placed into a pandas dataframe and saves the df as a csv file for each year
