@@ -2,6 +2,26 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 
+
+def create_list(x, y):
+    """
+    Extracts the text from each item in a list created by the .find_all function of bs4 and
+        stores the text in a second list
+
+            Args:
+                x (list): a list of all the tags or strings that match a particular criteria
+
+                y (list): a second list to store the text retrieved from each item in the
+                    first list
+
+            Side effects:
+                populates second list
+    """
+    for i in x:
+        x = i.text
+        y.append(x)
+
+
 year = input("Enter a year: ")
 
 # url definition
@@ -24,26 +44,6 @@ revenue = soup.find_all("td", class_="a-text-right mojo-field-type-money")[0:150
 film_titles = []
 film_ranks = []
 box_office_earnings = []
-
-
-def create_list(x, y):
-    """
-    Extracts the text from each item in a list created by the .find_all function of bs4 and
-        stores the text in a second list
-
-            Args:
-                x (list): a list of all the tags or strings that match a particular criteria
-
-                y (list): a second list to store the text retrieved from each item in the
-                    first list
-
-            Side effects:
-                populates second list
-    """
-    for i in x:
-        x = i.text
-        y.append(x)
-
 
 create_list(title, film_titles)
 create_list(rank, film_ranks)
